@@ -223,11 +223,19 @@
         document.body.appendChild(c);
         setTimeout(() => c.remove(), 2000);
       }
-    }
-
     render();
-    console.log('карточкиотрисованы');
+    const flowers = document.querySelector('.flowers');
+    const emojis = ['🌸','🌷','💖','✨'];
+    for(let i = 0; i < 25; i++){
+    const flower = document.createElement('div');
+    flower.className = 'flower';
+    flower.innerHTML = emojis[Math.floor(Math.random()*emojis.length)];
+    flower.style.left = Math.random()*100 + 'vw';
+    flower.style.animationDuration = (10 + Math.random()*10) + 's';
+    flower.style.fontSize = (20 + Math.random()*25) + 'px';
+    flower.style.opacity = 0.1 + Math.random()*0.3;
+    flowers.appendChild(flower);
+    }
   </script>
-
 </body>
 </html>
